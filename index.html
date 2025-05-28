@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript + DOM - Clase Completa</title>
+  <link rel="stylesheet" href="estilos.css">
+  <script type="module" src="script.js"></script>
+</head>
+
+<body>
+  <!-- Sección para repaso de JavaScript -->
+  <div id="seccion-repaso" style="background: #f8f9fa; padding: 20px; margin: 20px 0; border-radius: 10px;">
+    <h2>🧠 Repaso JavaScript</h2>
+    <p>Abre la consola (F12) para ver los ejemplos de JavaScript</p>
+    <button id="boton-ejemplo-js">Ver Ejemplos JS</button>
+  </div>
+
+  <!-- Estructura principal para DOM -->
+  <header>
+    <h1 id="titulo-principal">Mi Aplicación Web Interactiva</h1>
+    <nav>
+      <ul class="menu-navegacion">
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#productos">Productos</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="seccion-inicio">
+      <h2 class="subtitulo">Bienvenidos a Nuestra Aplicación</h2>
+      <p class="descripcion-principal">Esta aplicación demuestra el poder de JavaScript y DOM</p>
+
+      <div class="contenedor-elementos">
+        <div class="elemento-ejemplo">Elemento 1</div>
+        <div class="elemento-ejemplo">Elemento 2</div>
+        <div class="elemento-ejemplo elemento-especial">Elemento Especial</div>
+      </div>
+
+      <button id="boton-interactivo" class="boton-principal">¡Hacer Click Aquí!</button>
+    </section>
+
+    <section id="seccion-productos">
+      <h2 class="subtitulo">Nuestros Productos</h2>
+      <div class="contenedor-productos">
+        <div class="producto-tarjeta" data-precio="25.99" data-categoria="tecnologia">
+          <h3>Auriculares Bluetooth</h3>
+          <p class="precio">$25.99</p>
+          <button class="boton-agregar">Agregar al Carrito</button>
+        </div>
+        <div class="producto-tarjeta" data-precio="89.99" data-categoria="tecnologia">
+          <h3>Teclado Mecánico</h3>
+          <p class="precio">$89.99</p>
+          <button class="boton-agregar">Agregar al Carrito</button>
+        </div>
+        <div class="producto-tarjeta" data-precio="15.50" data-categoria="accesorios">
+          <h3>Mouse Pad</h3>
+          <p class="precio">$15.50</p>
+          <button class="boton-agregar">Agregar al Carrito</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="seccion-contacto">
+      <h2 class="subtitulo">Formulario de Contacto</h2>
+      <form id="formulario-contacto">
+        <div class="grupo-campo">
+          <label for="nombre-usuario">Nombre Completo:</label>
+          <input type="text" id="nombre-usuario" name="nombre" required>
+          <span class="mensaje-error" id="error-nombre"></span>
+        </div>
+
+        <div class="grupo-campo">
+          <label for="email-usuario">Correo Electrónico:</label>
+          <input type="email" id="email-usuario" name="email" required>
+          <span class="mensaje-error" id="error-email"></span>
+        </div>
+
+        <div class="grupo-campo">
+          <label for="mensaje-usuario">Mensaje:</label>
+          <textarea id="mensaje-usuario" name="mensaje" rows="4" required></textarea>
+          <span class="mensaje-error" id="error-mensaje"></span>
+        </div>
+
+        <button type="submit" class="boton-principal">Enviar Mensaje</button>
+      </form>
+
+      <div id="resultado-formulario" style="display: none;"></div>
+    </section>
+
+    <!-- Área para contenido dinámico -->
+    <section id="area-dinamica">
+      <h2 class="subtitulo">Contenido Dinámico</h2>
+      <div id="contenedor-dinamico"></div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 - JavaScript + DOM</p>
+  </footer>
+
+</body>
+
+</html>
