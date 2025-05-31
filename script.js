@@ -62,8 +62,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // mini asignacion
-  // 1.en nuestro documento tenemos un elemento que se llama elemento-ejemplo
+  // 1.en nuestro documento tenemos un elemento que se llama contenedor-elementos
   // 2. este elemnto tiene tres hijos
   // 3.quiero referirme al segundo hijo y cambiarle su contenido(texto)
-
 });
