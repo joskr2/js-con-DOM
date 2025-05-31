@@ -40,7 +40,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const primerSubtitulo = document.querySelector(".subtitulo");
 
   if (primerSubtitulo) {
-    console.log(primerSubtitulo.textContent);
+    console.log(primerSubtitulo.textContent,"PRIMER SUBTITULO");
+    // @ts-ignore
+    primerSubtitulo.style.color = "blue";
   } else {
     console.log("No se encontro el primer subtitulo");
   }
@@ -63,6 +65,82 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // mini asignacion
   // 1.en nuestro documento tenemos un elemento que se llama contenedor-elementos
-  // 2. este elemnto tiene tres hijos
+  // 2. este elemento tiene tres hijos
   // 3.quiero referirme al segundo hijo y cambiarle su contenido(texto)
+
+  const contenedorElementos = document.querySelector(".contenedor-elementos");
+
+  // const segundoHijo = document.querySelector(
+  //   ".contenedor-elementos > :nth-child(2)"
+  // );
+
+  if (contenedorElementos) {
+    console.log(contenedorElementos); // children me sirve para trabajar con los hijos del elemento, usualemnet suele ser un array(coleccion) de elementos
+    const elementosHijos = contenedorElementos.children; // en los arrays los elementos tienen indices
+
+    // ej. let arrayElementos = ['primerElemento','segundoElemento','tercerElemento']o
+    // si quiero acceder al primer elemento dire algo asi como:
+    // arrayElementos en la primera posicion:
+    // arrayElementos[0]
+
+    // y el segundo elemento?
+    // arrayElementos[1]
+
+    const segundoELemento = elementosHijos[1]; // el text conntent , me sirve para cambiar o leer el contenido(texto) del elemento
+    segundoELemento.textContent = "ES UN NUEVO CONTENIDO";
+  } else {
+    console.log("No se encontro el contenedor de elementos");
+  }
+
+  const elementos = document.querySelectorAll("body");
+
+  console.log(elementos);
+
+  const miBody = elementos[0];
+
+  console.log(miBody);
+
+  const hijosMiBody = miBody.children;
+
+  console.log(hijosMiBody);
+
+  // el queryselectorall , me da como resultado una coleccion de elementos que coincida con el selector , en este caso ,
+  // los elementos que tengan las clase subtitulo
+  const subtitulos = document.querySelectorAll(".subtitulo");
+
+  // console.log(subtitulos)
+
+  // subtitulos.forEach((subtitulo, indice) => {
+  //   const emojis = ["🙈", "🧞‍♂️", "😎", "🥸"];
+  //   const emojiActual = emojis[indice] || "🫰";
+  //   subtitulo.textContent = `${emojiActual} ${subtitulo.textContent}`;
+  // });
+
+  // el priemr valor , es el valor del elemento
+  // y el seundo valor sera el indice de ese elemento
+  // biome-ignore lint/complexity/noForEach: <explanation>
+
+  if (subtitulos) {
+    subtitulos.forEach((elementoSubtitulo) => {
+      // quiero cambiarle el contenido a cada subtitulo
+      // @ts-ignore
+      // elementoSubtitulo.textContent = ` ${elementoSubtitulo.textContent.toUpperCase()}`;
+
+      elementoSubtitulo.style.color = "red";
+
+      // biome-ignore lint/correctness/noInvalidUseBeforeDeclaration: <explanation>
+      // @ts-ignore
+      const primeraLetra = elementoSubtitulo.textContent.charAt(0);
+
+      //primeraLetra.styles = 'color:blue'
+
+      // @ts-ignore
+      const restoCadenaTexto = elementoSubtitulo.textContent.slice(1);
+
+      // @ts-ignore
+      elementoSubtitulo.textContent = primeraLetra + restoCadenaTexto;
+    });
+  } else {
+    console.log("No se encontro el elemento");
+  }
 });
